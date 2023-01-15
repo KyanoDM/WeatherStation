@@ -1,1 +1,1 @@
-https://kyanoboi.github.io/WeatherStation/firebase/index.html
+https://kyanoboi.github.io/WeatherStation/Firebase/index.html
