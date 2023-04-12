@@ -9,26 +9,47 @@ const firebaseConfig = {
   measurementId: "G-VTTYPK4W1N"
 };
 
-var dataArray = [10];
+const dataArray = [{ value: 0, timestamp: new Date() }]; // initialize dataArray with an object containing temperature value and timestamp
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
-var fetchedData = database.ref('graph/temp');
-var fetchedDate = database.ref('graph/time');
+const fetchedData = database.ref('graph/temp');
+const fetchedDate = database.ref('graph/time');
 
-database.ref('graph/temp').limitToLast(10).once('value', (snapshot) => {
+fetchedData.on('value', (snapshot) => {
+  const data = snapshot.val();
+  const dataLength = data.length;
+
+  // fetch timestamps from the database
+  fetchedDate.limitToLast(dataLength).once('value', (snapshot) => {
+    const dates = snapshot.val();
+    const dateValues = Object.values(dates);
+
+    // update the chart labels with the fetched timestamps
+    chart.data.labels = dateValues;
+
+    // update the chart data with the fetched temperatures
+    chart.data.datasets[0].data = data;
+
+    chart.update();
+  });
+});
+
+fetchedData.orderByKey().limitToLast(10).on('value', (snapshot) => {
   var data = snapshot.val();
-  dataArray = data; // update the dataArray with the last 10 values
+  dataArray = Object.values(data); // update the dataArray with the last 10 values
   console.log(dataArray);
   chart.data.datasets[0].data.splice(0, 9, ...dataArray); // update the chart's datasets with the updated dataArray
   chart.update();
 });
 
 
-fetchedData.on('value', (snapshot) => {
-  var data = snapshot.val();
-  dataArray = data.slice(-10); // update the dataArray with the last 10 values
-  console.log(dataArray);
-  chart.data.datasets[0].data.splice(0, 9, ...dataArray); // update the chart's datasets with the updated dataArray
+fetchedData.on('child_added', (snapshot) => {
+  const value = snapshot.val();
+  const timestamp = new Date(parseInt(snapshot.key));
+  const newData = { value, timestamp };
+  dataArray.push(newData); // update the dataArray with the new data
+  chart.data.datasets[0].data.push(value); // update the chart's datasets with the updated dataArray
+  chart.data.labels.push(timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })); // update the chart's labels with the updated dataArray
   chart.update();
 });
 
@@ -51,20 +72,3 @@ const chart = new Chart(ctx, {
     }
   }
 });
-
-
-let counter = 0;
-const intervalId = setInterval(() => {
-  if (counter >= 10) {
-    chart.data.labels.shift(); // remove the first label
-    for (let i = 0; i < 10; i++) {
-      chart.data.datasets[0].data[i] = dataArray[i];
-    }
-    chart.data.datasets[0].data.pop(); // remove the last data point
-  }
-  chart.data.labels.push(new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}));
-  chart.data.datasets[0].data.push(dataArray[counter-1]);
-  
-  chart.update();
-  counter++;
-}, 10);
