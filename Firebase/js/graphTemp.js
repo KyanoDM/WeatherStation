@@ -13,7 +13,7 @@ const dataArray = [{ value: 0, timestamp: new Date() }]; // initialize dataArray
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 const fetchedData = database.ref('graph/temp');
-const fetchedDate = database.ref('graph/time');
+const fetchedDate = database.ref('graph/temp/time');
 
 fetchedData.on('value', (snapshot) => {
   const data = snapshot.val();
