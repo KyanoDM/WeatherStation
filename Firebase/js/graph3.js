@@ -59,7 +59,7 @@ const chart3 = new Chart(ctx3, {
   data: {
     labels: [],
     datasets: [{
-      label: 'Temperature',
+      label: 'Pressure',
       data: [],
       backgroundColor: 'rgba(255, 99, 132, 0.2)',
       borderColor: 'rgba(0, 128, 0, 1)',
