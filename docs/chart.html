@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <link rel="stylesheet" href="css/StyleTemp.css">
+ 
+  <title>Dynamic chart JS</title>
+
+</head>
+<a href="index.html" id="knop">
+<button type="button" class="btn btn-secondary knop">Back</button>
+</a>
+<div class="container con">
+  <div class="card small-card">
+    <h2>Humidity</h2>
+    <canvas id="myChartHum"></canvas>
+  </div>
+  <div class="card big-card">
+    <h2>Temperature</h2>
+    <canvas id="myChartTemp"></canvas>
+  </div>
+  <div class="card small-card">
+    <h2>Air Pressure</h2>
+    <canvas id="myChartPres"></canvas>
+  </div>
+</div>
+<center>
+  <h1 class="titel" id="windr">Wind Direction - Past 10 Hours</h1>
+</center>
+<div class="disk">
+  <div class="container">
+    <canvas id="myChartWind"></canvas>
+  </div>
+</div>
+<center>
+  <h1 class="titel" id="speedregen">Wind Speed & Rainfall</h1>
+</center>
+<div class="container">
+  <div class="card ">
+    <h2>Wind Speed</h2>
+    <canvas id="myChartWinds"></canvas>
+  </div>
+  <div class="card ">
+    <h2>Rainfall</h2>
+    <canvas id="myChartRain"></canvas>
+  </div>
+</div>
+<a href="#knop">
+  <button type="button" class="btn btn-secondary knop2">Go Back Up</button>
+  </a>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/hover2.js"></script>
+<script src="js/hover3.js"></script>
+<script src="js/graph2.js"></script>
+<script src="js/graph1.js"></script>
+<script src="js/graph3.js"></script>
+<script src="js/graph4.js"></script>
+<script src="js/graph5.js"></script>
+<script src="js/graph6.js"></script>
+</body>
+
+</html>

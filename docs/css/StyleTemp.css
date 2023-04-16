@@ -1,0 +1,93 @@
+body, html {
+    background-color: rgb(20, 20, 20);
+    height: 3000px;
+    scroll-behavior: smooth;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 90%;
+  }
+  
+  .card {
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 20px;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+  }
+  
+  .card2 {
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 20px;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+  }
+  
+  .disk {
+    color: white;
+    height: 55%;
+  }
+  
+  .titel {
+    color: white;
+  }
+  
+  .big-card {
+    width: 75%;
+    height: 50%;
+  }
+  
+  .small-card {
+    width: 40%;
+    height: 15%;
+  }
+  
+  .big-card2 {
+    width: 75%;
+    height: 50%;
+  }
+  
+  .small-card2 {
+    width: 40%;
+    height: 15%;
+  }
+  
+  .card:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    z-index: 1;
+  }
+  .card2:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    z-index: 1;
+  }
+
+  .knop {
+    margin-left: 20px;
+    
+    margin-top: 20px;
+  }
+  .knop2 {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  #speedregen {
+    margin-bottom:-280px ;
+  }
+  #myChartWinds,
+#myChartRain {
+  width: 280%;
+  height: 400%;
+}
