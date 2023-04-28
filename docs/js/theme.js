@@ -3,11 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var button1 = document.querySelector("#lean");
     var button2 = document.querySelector("#sky");
     var button3 = document.querySelector("#sun");
-    var settingsBut = document.getElementById("#ModalBut");
   
     // When the button is clicked, change the background color of the body element
     button1.addEventListener("click", function () {
-      settingsBut.style.backgroundColor = "red";
       document.body.style.backgroundColor = "#21D4FD";
       document.body.style['background-image'] = "linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)";
     });
