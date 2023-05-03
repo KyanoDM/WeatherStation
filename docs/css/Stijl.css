@@ -5,6 +5,11 @@ body {
     overflow: hidden;
 }
 
+.knop {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
 .white {
     height: 7%;
     width: auto;
