@@ -2,7 +2,7 @@ html,
 body {
     margin: 0;
     background: linear-gradient(to right, #070813, #3629c2);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .knop {
