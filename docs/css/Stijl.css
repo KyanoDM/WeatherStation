@@ -1,0 +1,72 @@
+html,
+body {
+    margin: 0;
+    background: linear-gradient(to right, #070813, #3629c2);
+    overflow-x: hidden;
+}
+
+.white {
+    height: 250px;
+    width: auto;
+}
+
+.white-smal {
+    height: 25px;
+    width: auto;
+}
+
+.Past {
+    font-size: 75px;
+    color: white;
+}
+
+.PastCon {
+    margin-top: 20%;
+    color: white;
+    text-align: center;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.LargeButCon {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.celcius {
+    width: 150px;
+    height: 150px;
+    filter: invert(1);
+}
+
+.card-img,
+.card-img-bottom,
+.card-img-top {
+    width: 100%;
+}
+
+.LeftArrow {
+    width: 30px;
+}
+
+div.Tempcard {
+    background: linear-gradient(to bottom, #1CB5E0, #000046);
+    color: white;
+    border: 5px;
+    border-radius: 30px;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.tempcard:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transform: translateY(-30px) scale(1.05)rotate(-3deg);
+}
+
+
+.tempcard {
+    transition: transform 0.2s ease-out;
+}
