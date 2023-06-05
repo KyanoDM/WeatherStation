@@ -12,11 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
         title = "Wind Direction - Past 10 Hours";
       } else if (windstate === 1) {
         title = "Wind Direction - Past 1 Hour";
+      } else if (windstate === 4) {
+        title = "Wind Direction - Past 20 Hour";
       }
       document.getElementById("windr").innerHTML = title;
   
       var slider = document.getElementById('slider');
-      slider.max = 3; // Set the maximum value explicitly to 3
+      slider.max = 4; // Set the maximum value explicitly to 3
       slider.step = 1; // Set the step value explicitly to 1
       slider.value = windstate; // Set the initial value of the slider
     });
